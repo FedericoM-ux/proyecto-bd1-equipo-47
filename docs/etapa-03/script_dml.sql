@@ -54,21 +54,32 @@ INSERT INTO Producto (descripcion, nombre_prod, precio, stock, id_categoria, id_
 ('Postre flan casero con dulce de leche', 'Flan Casero', 1800.75, 18, 6, 2, 10);
 
 -- 5. Poblado Persona 
-INSERT INTO Persona (dni, nombre, apellido) VALUES 
-('35123456', 'Juan', 'Pérez'),
-('38987654', 'María', 'Gómez'),
-('40111222', 'Carlos', 'López');
-('22388642', 'Juana', 'Martinez');
+INSERT INTO Persona (dni, nombre, apellido, correo electronico, telefono, direccion) VALUES 
+('35123456', 'Juan', 'Pérez', 'juanperez@gmail.com', '3795562781', 'Las Piedras 1750');
+('46713562', 'Marina', 'Alvarez', 'marinalavarez@gmail.com', '3794672687', 'Cordoba 1506');
+('23456781', 'Andres', 'Gonzalez', 'andresgonzalez@gmail.com', '3794652671', 'San luis y Mendoza');
+('12457832', 'Andrea', 'Galarza', 'andreagalarza@gmail.com', '3795674233', 'Necochea 2222');
+('50003032', 'Ricardo', 'Gimenez', 'ricardogimenez@gmail.com', '3798552516', 'Junin 1766');
+('45553432', 'Marisa', 'Pérez', 'marisaperez@gmail.com', '3794332331', 'Cordoba 2000');
+('22333445', 'Sebastian', 'Hernandez', 'sebastianhernandez@gmail.com', '3794567121', 'Catamarca 56');
+('34153677', 'Rita', 'Paez', 'ritapaez@gmail.com', '3794882781', 'Gutenbertg y tte ibañez');
 
 -- 1. Poblado de la tabla Cliente
 INSERT INTO Cliente (dni) VALUES 
 ('35123456');
-('22388642');
+('46713562');
+('45553432');
+('22333445');
+('34153677');
 
--- 2. Poblado de la tabla Cocinero
-INSERT INTO Cocinero (dni) VALUES 
-('38987654');
-
--- 3. Poblado de la tabla Repartidor
+-- 2. Poblado de la tabla Repartidor
 INSERT INTO Repartidor (dni) VALUES 
-('40111222');
+('35123456');
+('23456781');
+('22333445');
+
+-- 3. Poblado de la tabla Cocinero
+INSERT INTO Cocinero (dni) VALUES 
+('12457832');
+('50003032');
+('34153677');
