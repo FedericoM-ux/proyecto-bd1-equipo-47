@@ -52,3 +52,23 @@ INSERT INTO Producto (descripcion, nombre_prod, precio, stock, id_categoria, id_
 ('Tarta de jamón y queso porción', 'Tarta J&Q', 750.00, 40, 3, 2, 8),
 ('Papas fritas con queso cheddar y verdeo', 'Papas Cheddar', 700.00, 80, 4, 1, 9),
 ('Postre flan casero con dulce de leche', 'Flan Casero', 1800.75, 18, 6, 2, 10);
+
+-- 5. Poblado Persona 
+INSERT INTO Persona (dni, nombre, apellido) VALUES 
+('35123456', 'Juan', 'Pérez'),
+('38987654', 'María', 'Gómez'),
+('40111222', 'Carlos', 'López');
+('22388642', 'Juana', 'Martinez');
+
+-- 1. Poblado de la tabla Cliente
+INSERT INTO Cliente (dni) VALUES 
+('35123456');
+('22388642');
+
+-- 2. Poblado de la tabla Cocinero
+INSERT INTO Cocinero (dni) VALUES 
+('38987654');
+
+-- 3. Poblado de la tabla Repartidor
+INSERT INTO Repartidor (dni) VALUES 
+('40111222');
