@@ -1,0 +1,17 @@
+SELECT 
+    p.id_pedido AS [Nro Pedido],
+    p.fecha AS [Fecha],
+    per.nombre + ' ' + per.apellido AS [Cliente],
+    prod.nombre_prod AS [Producto],
+    dp.cantidad AS [Cantidad],
+    dp.precio_unit AS [Precio Unitario],
+    
+    (dp.cantidad * dp.precio_unit) AS [Subtotal],
+    
+    p.total AS [Total Pedido]
+
+FROM Pedido p
+JOIN detalle_Pedido dp ON p.id_detalle = dp.id_detalle
+JOIN Producto prod ON prod.id_detalle = dp.id_detalle
+JOIN Cliente c ON p.id_cliente = c.id_cliente
+JOIN Persona per ON c.dni = per.dni;
