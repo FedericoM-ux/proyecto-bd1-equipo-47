@@ -1,0 +1,17 @@
+Descripción de los temas técnicos y fundamentos de aplicación en el caso de estudio
+1. Procedimientos y funciones almacenadas
+Los procedimientos y las funciones almacenadas permiten guardar instrucciones SQL dentro de la base de datos para ejecutar operaciones específicas o realizar cálculos. Los procedimientos almacenados permiten agrupar varias operaciones, mientras que las funciones pueden recibir parámetros y 
+devolver resultados.
+Aplicación en el caso de estudio: En el sistema de gestión de la hamburguesería, se pueden utilizar procedimientos almacenados para registrar un pedido junto con sus detalles y funciones para calcular el importe de un pedido a partir de las cantidades y los precios unitarios de los productos. 
+Esto permite centralizar las operaciones comerciales, evitar la repetición de instrucciones SQL y facilitar el mantenimiento de la base de datos.
+
+2. Manejo de transacciones
+Las transacciones permiten agrupar varias operaciones sobre la base de datos para que se ejecuten como una única unidad de trabajo. Se basan en las propiedades ACID: atomicidad, consistencia, aislamiento y durabilidad, que contribuyen a garantizar la integridad y la confiabilidad de los datos.
+Aplicación en el caso de estudio: Al registrar un pedido, es necesario almacenar la información general en la tabla "PEDIDO" y sus respectivos productos en `DETALLE_PEDIDO`. Mediante una transacción, ambas operaciones pueden confirmarse si se ejecutan correctamente. Si ocurre un error durante 
+el registro, se puede cancelar la transacción para evitar que quede un pedido incompleto. Además, si se actualiza el stock de los productos al confirmar el pedido, esta operación también puede incluirse en la transacción para mantener la consistencia de los datos.
+
+3. Triggers de auditoría
+Los triggers o disparadores son mecanismos que ejecutan automáticamente instrucciones cuando se produce un evento sobre una tabla de la base de datos, como una inserción, modificación o eliminación de registros. Se pueden utilizar para registrar cambios importantes y mantener un historial de 
+las operaciones realizadas.
+Aplicación en el caso de estudio: En el sistema de gestión de la hamburguesería, se implementará un trigger de auditoría sobre la tabla `PRODUCTO`, que permitirá registrar las modificaciones realizadas en los precios. Cuando se actualice el precio de un producto, el trigger almacenará en una 
+tabla de auditoría su identificador, nombre, precio anterior, precio nuevo y fecha de modificación. De esta manera, será posible consultar el historial de cambios de precios y realizar un seguimiento de las modificaciones efectuadas en los productos del negocio.
