@@ -15,3 +15,15 @@ Los triggers o disparadores son mecanismos que ejecutan automáticamente instruc
 las operaciones realizadas.
 Aplicación en el caso de estudio: En el sistema de gestión de la hamburguesería, se implementará un trigger de auditoría sobre la tabla `PRODUCTO`, que permitirá registrar las modificaciones realizadas en los precios. Cuando se actualice el precio de un producto, el trigger almacenará en una 
 tabla de auditoría su identificador, nombre, precio anterior, precio nuevo y fecha de modificación. De esta manera, será posible consultar el historial de cambios de precios y realizar un seguimiento de las modificaciones efectuadas en los productos del negocio.
+
+4. Seguridad de la base de datos
+La seguridad de una base de datos comprende los mecanismos destinados a proteger la información frente a accesos no autorizados y modificaciones indebidas. Entre estos mecanismos se encuentran la creación de usuarios, la asignación de permisos y el principio de mínimo privilegio, según el 
+cual cada usuario debe disponer únicamente de los permisos necesarios para realizar sus tareas.
+Aplicación en el caso de estudio: En el sistema de la hamburguesería se pueden definir diferentes permisos para los usuarios de la base de datos. Por ejemplo, un usuario encargado de registrar pedidos podría tener permisos para consultar productos e insertar pedidos y detalles, 
+mientras que un administrador podría disponer de permisos adicionales para modificar productos y consultar información comercial. Esta separación permite proteger los datos de clientes, pedidos, productos y pagos, reduciendo el riesgo de accesos o modificaciones no autorizados.
+
+5. Índices y optimización de consultas
+Los índices son estructuras auxiliares que permiten localizar registros de manera más eficiente, reduciendo el tiempo necesario para ejecutar determinadas consultas. Pueden mejorar el rendimiento de las búsquedas, los filtros y las consultas que relacionan varias tablas. Sin embargo, consumen 
+espacio de almacenamiento y pueden incrementar el costo de las operaciones de inserción, modificación y eliminación.
+Aplicación en el caso de estudio: Se pueden crear índices sobre los atributos utilizados frecuentemente para consultar pedidos por fecha, buscar productos por nombre o recuperar los pedidos de un cliente. Por ejemplo, un índice sobre PEDIDO.fecha puede mejorar las consultas que filtran los 
+pedidos por período, mientras que uno sobre PRODUCTO.nombre_prod puede facilitar la búsqueda de productos por nombre. La elección de los índices debe basarse en las consultas más frecuentes del sistema para mejorar el rendimiento sin crear estructuras innecesarias.
